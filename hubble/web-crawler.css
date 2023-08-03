@@ -1,0 +1,53 @@
+.web-search input[type="search"] {
+  width: 43%;
+  color: #a12727;
+  padding: 1%;
+  font-size: 1rem;
+  border: 1px solid #a12727;
+  border-radius: 100px;
+  justify-content: center;
+}
+.web-search input[type="url"] {
+  width: 40%;
+  color: #a12727;
+  padding: 1%;
+  font-size: 1rem;
+  border: 1px solid #a12727;
+  border-radius: 100px;
+  justify-content: center;
+}
+.input-container h3 {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.input-container input {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+::placeholder {
+  color: #ca3232;
+}
+
+/* Search button CSS  */
+.web-search {
+  margin-top: 5px;
+  text-align: center;
+}
+.btn {
+  padding: 1%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 100px;
+  text-align: center;
+}
+.btn-primary {
+  background-color: #a12727;
+  color: white;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: #751c1c;
+}

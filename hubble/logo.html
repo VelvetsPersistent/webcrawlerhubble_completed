@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hubble Web Crawler</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="main.js"></script>
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+      attribute float size;
+      attribute vec3 customColor;
+      varying vec3 vColor;
+
+      void main() {
+
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
+        gl_Position = projectionMatrix * mvPosition;
+
+      }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+
+      uniform vec3 color;
+      uniform sampler2D pointTexture;
+
+      varying vec3 vColor;
+
+      void main() {
+
+        gl_FragColor = vec4( color * vColor, 1.0 );
+        gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Hubble Web Crawler</h1>
+      <!-- Navigation bar Starts Here -->
+      <div class="menu text-center">
+        <a href="index.html">Home</a>
+        <a href="web-crawler.html">Web Crawler</a>
+        <a href="logo.html">Logo</a>
+        <a href="about-us.html">About Us</a>
+      </div>
+    </header>
+    <!-- <hr /> -->
+    <div class="boldline"></div>
+    <!-- Logo Game Starts here  -->
+    <div id="magic"></div>
+    <div class="playground">
+      <div class="bottomPosition"></div>
+    </div>
+    <!-- <hr /> -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="bold-line"></div>
+
+    <!-- social Section Starts Here -->
+    <section class="social">
+      <div class="container text-center">
+        <div class="social-links">
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fa fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com/" target="_blank">
+            <i class="fa fa-twitter"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <i class="fa fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <!-- social Section Ends Here -->
+
+    <!-- footer Section Starts Here -->
+    <section class="footer">
+      <div class="container text-center">
+        <p>
+          Copyright © 2079-2080
+          <a href="index.html" target="_blank">HWC.LTD</a> All Rights Reserved.
+        </p>
+      </div>
+    </section>
+    <!-- footer Section Ends Here -->
+  </body>
+</html>

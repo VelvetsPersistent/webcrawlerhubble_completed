@@ -1,0 +1,13 @@
+/* about us */
+
+.aboutus-text h3 {
+  font-size: 22px;
+  color: #a12727;
+  font-weight: lighter;
+  font-style: italic;
+  font-family: fortnite;
+
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+}
